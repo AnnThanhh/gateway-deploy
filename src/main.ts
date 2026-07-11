@@ -12,8 +12,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
-   const config = new DocumentBuilder()
-    .setTitle('Nodejs 55 Gateway API')
+  const config = new DocumentBuilder()
+    .setTitle('Nodejs 55 Gateway API CICD')
     .setDescription('The Nodejs 55 Gateway API description')
     .setVersion('1.0')
     .build();
