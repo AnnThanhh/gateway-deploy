@@ -13,7 +13,7 @@ async function bootstrap() {
   app.use(cookieParser());
 
   const config = new DocumentBuilder()
-    .setTitle('Nodejs 55 Gateway API CICD')
+    .setTitle('Nodejs 55 Gateway API CICD v2')
     .setDescription('The Nodejs 55 Gateway API description')
     .setVersion('1.0')
     .build();
