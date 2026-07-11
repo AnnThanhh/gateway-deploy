@@ -12,13 +12,14 @@ jobs:
 
         steps:
             - name: dừng container be
-            run: sudo docker container stop con-gateway-dc
+              run: sudo docker container stop con-gateway-dc
 
             - name: xóa container be
-            run: sudo docker container remove con-gateway-dc
+              run: sudo docker container remove con-gateway-dc
 
             - name: xóa image be
-            run: sudo docker image remove tathanh26/img-gateway
+              run: sudo docker image remove tathanh26/img-gateway
 
             - name: chạy lại source
-            run: sudo docker compose up -d
+              working-directory: /home/ubuntu/nestjs
+              run: sudo docker compose up -d
