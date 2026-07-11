@@ -1,24 +1,24 @@
 name: cd
 
 on:
-  workflow_run:
-    workflows: ['ci']
-    types:
-      - completed
+   workflow_run:
+       workflows: ['ci']
+       types:
+           - completed
 
 jobs:
-  start:
-    runs-on: node_55
+    start:
+        runs-on: node_55
 
-    steps:
-      - name: dừng container be
-        run: sudo docker container stop con-gateway-dc
+        steps:
+            - name: dừng container be
+            run: sudo docker container stop con-gateway-dc
 
-      - name: xóa container be
-        run: sudo docker container remove con-gateway-dc
+            - name: xóa container be
+            run: sudo docker container remove con-gateway-dc
 
-      - name: xóa image be
-        run: sudo docker image remove tathanh26/img-gateway
+            - name: xóa image be
+            run: sudo docker image remove tathanh26/img-gateway
 
-      - name: chạy lại source
-        run: sudo docker compose up -d
+            - name: chạy lại source
+            run: sudo docker compose up -d
