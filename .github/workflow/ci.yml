@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: đăng nhập vào docker hub
+        run: docker login -u tathanh26 -p ${{secrets.PASS_DOCKER}}
+
+      - name: build image
+        run: docker build -t tathanh26/img-gateway .
+
+      - name: push image
+        run: docker push tathanh26/img-gateway
